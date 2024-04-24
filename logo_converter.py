@@ -7,7 +7,7 @@ website_url = "https://www.datacenterdynamics.com/en/dcd-connect-live/connect-ma
 def convert_logos_to_links(website_url):
     base_url = "https://storage.googleapis.com/connect-live-app/logos/"
     
-    response = requests.get(website_url)
+    response = requests.get(website_url, headers={"User-Agent": "Image scraping tool"})
     response.raise_for_status()
 
     soup = BeautifulSoup(response.content, "html.parser")
